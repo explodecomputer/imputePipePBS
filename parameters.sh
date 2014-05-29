@@ -5,7 +5,7 @@
 # TO BE EDITED BY USER #
 ########################
 
-homdir=""
+homedir=""
 
 targetdatadir="${wd}data/target/chr${chr}/"
 hapdatadir="${wd}data/haplotypes/chr${chr}/"
