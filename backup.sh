@@ -10,7 +10,7 @@
 module add languages/R-3.0.2
 set -e
 
-cd /panfs/panasas01/sscm/gh13047/imputation/1958bc
+cd WD
 
 if [ -n "${1}" ]; then
   echo "${1}"

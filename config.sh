@@ -1,4 +1,4 @@
 source parameters.sh
 
 echo $homedir
-sed -i "s@~\/imputePipe@$homedir@" *.sh
+sed -i "s@WD@$homedir@" *.sh

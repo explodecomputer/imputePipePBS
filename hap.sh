@@ -12,7 +12,7 @@
 
 set -e
 
-cd /panfs/panasas01/sscm/gh13047/imputation/1958bc
+cd WD
 
 
 if [ -n "${1}" ]; then

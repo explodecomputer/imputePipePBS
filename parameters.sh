@@ -5,13 +5,13 @@
 # TO BE EDITED BY USER #
 ########################
 
-homdir="~/imputation/1958bc"
+homdir=""
 
 targetdatadir="${wd}data/target/chr${chr}/"
 hapdatadir="${wd}data/haplotypes/chr${chr}/"
 impdatadir="${wd}data/imputed/chr${chr}/"
 refdatadir="/panfs/panasas01/sscm/gh13047/data/1000g_reference/no_singletons/ALL.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.nosing/"
-chrmap="${wd}data/reference/genetic_map_b37/genetic_map_chr${chr}_combined_b37.txt.gz"
+chrmap="${refdatadir}genetic_map_b37/genetic_map_chr${chr}_combined_b37.txt.gz"
 
 # Reference data file locations
 reflegend="${refdatadir}ALL.chr${chr}.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.nosing.legend.gz"
@@ -23,11 +23,11 @@ interval=5000000
 maxgap=2000000
 
 # Target data information (after cleaning using strand_align.sh)
-rawdata="${wd}data/target/wtccc1_inf_recoded"
-originaldata="${wd}data/target/1958bc_flipped_qc"
-chrdata="1958BC${chr}"
-shortname="1958bc${chr}"
-strand_file="${wd}data/target/strand/HumanHap550-2v3_B-b36.strand"
+rawdata="${wd}data/target/NAME"
+originaldata="${wd}data/target/NAME"
+chrdata="NAME${chr}"
+shortname="NAME${chr}"
+strand_file="${wd}data/target/strand/NAME"
 
 # LiftOver chain
 lochain="${wd}exe/hg18ToHg19.over.chain"
@@ -36,7 +36,7 @@ lochain="${wd}exe/hg18ToHg19.over.chain"
 nsnp=`wc -l ${originaldata}.bim | awk '{print $1}'`
 
 # Output name
-plink1kg="1958bc_1kg_p1v3_${chr}"
+plink1kg="NAME_1kg_p1v3_${chr}"
 
 # Filtering thresholds
 filterMAF="0.01"
@@ -46,8 +46,7 @@ filterInfo="0.8"
 filtername="${plink1kg}_maf${filterMAF}_info${filterInfo}"
 
 # Backup
-# backupdir="/projects/Imputation_extension_ALSPAC/Data-Bris/1kg_imp/"
-backupdir="/panfs/panasas01/shared/alspac/alspac_combined_1kg_20140424/"
+backupdir="NAME"
 
 
 
@@ -56,7 +55,7 @@ backupdir="/panfs/panasas01/shared/alspac/alspac_combined_1kg_20140424/"
 ######################
 
 
-plink="plink"
+plink="${wd}exe/plink"
 hapi_ur="${wd}exe/hapi-ur"
 shapeit2="${wd}exe/shapeit2"
 impute2="${wd}exe/impute2"
