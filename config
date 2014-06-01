@@ -1,0 +1,5 @@
+source parameters.sh
+
+echo $homedir
+sed -i "s@WD@$homedir@" *.sh
+sed -i "s@WD@$homedir@" exe/template_imputation.sh

@@ -10,7 +10,7 @@ set -e
 
 chr=CHR
 
-cd ~/imputePipe
+cd WD
 wd=`pwd`"/"
 
 source parameters.sh
