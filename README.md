@@ -6,8 +6,8 @@ A pipeline to impute human SNP data to [1000 genomes][0] efficiently by parallel
 #### Summary
 
 Provided here is simply a collection of scripts in `bash` and `R` that knit together a two stage imputation process:
- - Stage one uses [`hapi-ur`][1] to haplotype the **target** data
-     - Williams AL, Patterson N, Glessner J, Hakonarson H, and Reich D. [Phasing of Many Thousands of Genotyped Samples][14]. American Journal of Human Genetics 2012 91(2) 238-251.
+ - Stage one uses [`ShapeIt V2`][1] to haplotype the **target** data
+     - O. Delaneau, JF. Zagury, J. Marchini [Improved whole chromosome phasing for disease and population genetic studies.][14] Nat Methods. (2013). 10(1):5-6. doi: 10.1038/nmeth.2307. American Journal of Human Genetics 2012 91(2) 238-251.
  - Stage two uses [`impute2`][2] to impute to the 1000 genomes **reference**
      - Howie BN, Donnelly P, and Marchini, J. [A Flexible and Accurate Genotype Imputation Method for the Next Generation of Genome-Wide Association Studies][15]. PLoS Genetics 2009 5(6):e1000529
 
@@ -43,7 +43,7 @@ Imputation is a big, slow, ugly, long-winded, hand-wavey, unpleasant process. In
 
 Here is a list of resources that I have used:
 
- - `hapi-ur` developed by [Amy Williams][1]
+ - `ShapeIt2` developed by [Delaneau et al][1]
  - `impute2` developed by [Bryan Howie][2]
  - `plink` developed by [Shaun Purcell][8]
  - Parts of the `GermLine` software developed by [Itsik Pe'er][7]
@@ -115,7 +115,7 @@ The output from this will be binary `plink` files for each chromosome located in
 
 ### 4. Perform haplotyping
 
-This uses [Amy Williams][6]' excellent haplotyping programme [`hapi-ur`][1]. We perform the haplotyping three times on each chromosome:
+This uses [`ShapeIt2`][1]. We perform the haplotyping three times on each chromosome:
 
     qsub hap.sh
 
@@ -216,7 +216,7 @@ It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
 
 
 [0]: http://1000genomes.org/
-[1]: http://code.google.com/p/hapi-ur/
+[1]: https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html
 [2]: http://mathgen.stats.ox.ac.uk/impute/impute_v2.html
 [3]: http://www.well.ox.ac.uk/~wrayner/strand/
 [4]: http://hgdownload.cse.ucsc.edu/downloads.html#liftover
@@ -229,6 +229,6 @@ It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
 [11]: http://genome.sph.umich.edu/wiki/Minimac:_1000_Genomes_Imputation_Cookbook
 [12]: http://genome.sph.umich.edu/wiki/Abecasis_Lab
 [13]: http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#bed
-[14]: http://www.cell.com/AJHG/abstract/S0002-9297%2812%2900322-9
+[14]: http://www.ncbi.nlm.nih.gov/pubmed/23269371
 [15]: http://www.plosgenetics.org/article/info%3Adoi%2F10.1371%2Fjournal.pgen.1000529
 [16]: http://www.complextraitgenomics.com
